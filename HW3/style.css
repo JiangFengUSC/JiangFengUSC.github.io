@@ -1,0 +1,338 @@
+body {
+  background-color: darkgrey;
+  margin: 0;
+}
+body .allContent {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1190px;
+  font-family: 'Montserrat', sans-serif;
+}
+body .allContent .backgroundImage {
+  position: fixed;
+  z-index: -1;
+  width: 1190px;
+  display: flex;
+  flex-direction: column;
+}
+body .allContent .backgroundImage img {
+  width: 1190px;
+  height: 1200px;
+  object-fit: cover;
+  overflow: hidden;
+  filter: grayscale(90%);
+}
+body .allContent .topBar {
+  height: 105px;
+  background-color: white;
+  position: relative;
+  line-height: 105px;
+  text-align: center;
+}
+body .allContent .topBar .menu {
+  position: absolute;
+  left: 106px;
+  font-size: 15px;
+}
+body .allContent .topBar .topBarRight {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 170px;
+  right: 115px;
+  font-size: 13px;
+  color: #CACACA;
+}
+body .allContent .topBar .topBarRight a {
+  color: inherit;
+  /* blue colors for links too */
+  text-decoration: inherit;
+  /* no underline */
+}
+body .allContent .mainPicture {
+  position: relative;
+  height: 670px;
+}
+body .allContent .mainPicture img {
+  margin: 0;
+  z-index: 0;
+  width: 1190px;
+}
+body .allContent .mainPicture .signUpBox {
+  z-index: 1;
+  background-color: #0B3C5D;
+  position: absolute;
+  top: 133px;
+  left: 94px;
+  height: 405px;
+  width: 352px;
+}
+body .allContent .mainPicture .signUpBox .signUpContent {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+}
+body .allContent .mainPicture .signUpBox .signUpContent .p1 {
+  color: white;
+  font-size: 10px;
+  line-height: 20px;
+}
+body .allContent .mainPicture .signUpBox .signUpContent .p2 {
+  color: white;
+  font-size: 29px;
+  line-height: 30px;
+  font-weight: bold;
+}
+body .allContent .mainPicture .signUpBox .signUpContent .p3 {
+  color: #F6DC4E;
+  font-size: 13px;
+  line-height: 30px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: Arial;
+}
+body .allContent .mainPicture .signUpBox .signUpContent input {
+  position: absolute;
+  left: 0;
+  top: 173px;
+  height: 46px;
+  width: 272px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+body .allContent .mainPicture .signUpBox .signUpContent button {
+  position: absolute;
+  left: 0;
+  top: 244px;
+  height: 40px;
+  width: 146px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: #F6DC4E;
+  font-size: 11px;
+}
+body .allContent .featureArea {
+  background-color: white;
+  height: 388px;
+  display: flex;
+  align-items: center;
+}
+body .allContent .featureArea .features {
+  width: 1190px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 95px;
+  margin-right: 95px;
+}
+body .allContent .featureArea .features .feature .p1 {
+  color: #272727;
+  font-size: 14px;
+  line-height: 40px;
+}
+body .allContent .featureArea .features .feature .p2 {
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #858585;
+}
+body .allContent .quote {
+  height: 343px;
+  background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .allContent .quote .p1 {
+  font-size: 16px;
+  line-height: 55px;
+}
+body .allContent .quote .p2 {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  font-family: Arial;
+}
+body .allContent .quote .p2 .s1 {
+  font-weight: bold;
+}
+body .allContent .quote .p2 .s2 {
+  color: #848484;
+}
+body .allContent .price {
+  height: 770px;
+  background-color: rgba(220, 220, 220, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .allContent .price .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 62px;
+}
+body .allContent .price .title .p1 {
+  font-size: 19px;
+}
+body .allContent .price .title .p2 {
+  font-size: 12px;
+  line-height: 45px;
+  color: #9A9A9A;
+}
+body .allContent .price .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 94px;
+  margin-right: 94px;
+  margin-bottom: 79px;
+}
+body .allContent .price .cards .priceCard {
+  height: 491px;
+  width: 307px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body .allContent .price .cards .priceCard .cardBackground {
+  z-index: 0;
+  position: absolute;
+  height: 491px;
+  width: 307px;
+  overflow: hidden;
+  background-color: #F8F8F8;
+  opacity: 1;
+}
+body .allContent .price .cards .priceCard .cardBackground img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.2;
+}
+body .allContent .price .cards .priceCard .p1 {
+  z-index: 1;
+  margin-top: 66px;
+  font-size: 14px;
+  color: #323232;
+}
+body .allContent .price .cards .priceCard .p2 {
+  z-index: 1;
+  font-size: 12px;
+  line-height: 30px;
+  color: #323232;
+}
+body .allContent .price .cards .priceCard .p3 {
+  z-index: 1;
+  font-size: 23px;
+  line-height: 30px;
+}
+body .allContent .price .cards .priceCard button {
+  z-index: 1;
+  height: 52px;
+  width: 131px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: #193C5B;
+  color: white;
+  margin-bottom: 78px;
+}
+body .allContent .tryIt {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+body .allContent .tryIt .background {
+  position: absolute;
+  width: 1190px;
+  height: 450px;
+}
+body .allContent .tryIt .background img {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  overflow: hidden;
+}
+body .allContent .tryIt .background .filter {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 450px;
+  background-color: #1c4769;
+  opacity: 80%;
+}
+body .allContent .tryIt .text {
+  margin-top: 160px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+body .allContent .tryIt .text .p1 {
+  font-size: 25px;
+  line-height: 40px;
+}
+body .allContent .tryIt .text .p2 {
+  font-size: 13px;
+  line-height: 20px;
+}
+body .allContent .tryIt button {
+  margin-bottom: 163px;
+  z-index: 1;
+  height: 42px;
+  width: 166px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: #FADD16;
+  font-size: 13px;
+}
+body .allContent .aboutUs {
+  height: 275px;
+  background-color: #1E252F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+body .allContent .aboutUs .text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 85px;
+}
+body .allContent .aboutUs .text .p1 {
+  font-size: 13px;
+}
+body .allContent .aboutUs .text .p2 {
+  font-size: 10px;
+  color: #A4A5A6;
+  line-height: 25px;
+}
+body .allContent .aboutUs .logos {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 90px;
+}
+body .allContent .aboutUs .logos .logo img {
+  padding: 0 20px;
+  width: 25px;
+  height: 25px;
+}
+/*# sourceMappingURL=style.css.map */
