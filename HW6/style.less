@@ -1,0 +1,170 @@
+
+body{
+  background: #E6E6E6;
+  font-family: Helvetica;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .searchBox{
+    left: auto;
+    right: auto;
+    width: 610px;
+    height: 470px;
+    border: 1px solid #CFCFCF;
+    .banner{
+      color: #535353;
+      border-bottom: 1px solid #CFCFCF;
+      height: 125px;
+      position: relative;
+      .background{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        overflow: hidden;
+        img {
+          //position: absolute;
+          width: 2.4 * 610px;
+          height: 2.4 * 125px;
+          object-fit: cover;
+        }
+      }
+      .title{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .l1{
+          margin-top: 36px;
+          margin-left: 40px;
+          font-size: 22px;
+        }
+        .l2{
+          margin-bottom: 23px;
+          margin-left: 40px;
+          font-size: 18px;
+          font-weight: lighter;
+        }
+      }
+    }
+
+    .searchArea{
+      width: 610px;
+      height: 342px;
+      background-color: white;
+      position: relative;
+      #streetLabel{
+        position: absolute;
+        top: 28px;
+        left: 40px;
+      }
+      #street{
+        position: absolute;
+        top: 50px;
+        height: 32px;
+        width: 523px;
+        left: 40px;
+      }
+      #cityLabel{
+        position: absolute;
+        top: 105px;
+        left: 40px;
+      }
+      #city{
+        position: absolute;
+        top: 130px;
+        left: 40px;
+        height: 32px;
+        width: 220px;
+      }
+      input[type="text"]:focus{
+        border-color: black;
+        outline: 0;
+        padding-left: 5px;
+      }
+      #stateLabel{
+        position: absolute;
+        top: 105px;
+        left: 300px;
+      }
+      #state{
+        //-webkit-appearance: none;
+        position: absolute;
+        top: 130px;
+        left: 300px;
+        height: 36px;
+        width: 270px;
+        border: 1px solid #676773;
+        border-radius: 3px;
+        padding-left: 3px;
+      }
+      #state:disabled{
+        background-color: white;
+        border-color: #C7C7CE;
+      }
+      label{
+        font-size: 15px;
+        color: #4F6DAC;
+      }
+      #separateLine{
+        position: absolute;
+        top: 185px;
+        right: 40px;
+        left: 40px;
+      }
+      .autoLocation{
+        position: absolute;
+        top: 210px;
+        left: 40px;
+        font-size: 20px;
+        color: #4F6DAC;
+        line-height: 20px;
+        input{
+          top: auto;
+          bottom: auto;
+        }
+      }
+      .submit{
+        position: absolute;
+        top: 260px;
+        left: 40px;
+        width: 110px;
+        height: 47px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 5px solid #334B78;
+        background: #496CAC;
+        color: white;
+        font-weight: lighter;
+      }
+      .submit:hover{
+        background: #667db9;
+      }
+      .clear{
+        position: absolute;
+        top: 260px;
+        left: 160px;
+        //-webkit-appearance: none;
+        width: 110px;
+        height: 47px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 5px solid #FF8200;
+        background: #FFB80D;
+        color: white;
+        font-weight: lighter;
+      }
+      .clear:hover{
+        background: #ffcf62;
+      }
+      .label:after{
+        content:" *";
+        color: red;
+      }
+
+    }
+  }
+}
