@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather-HW6</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/windbarb.js"></script>
+    <script src="https://code.highcharts.com/modules/pattern-fill.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="/static/actions.js"></script>
+</head>
+<body>
+<div id="searchBox">
+    <div class="banner">
+        <div class="background">
+            <img src="/static/images/banner.jpg" alt="background cloud">
+        </div>
+
+        <div class="title">
+            <div class="l1">
+                Weather Search
+            </div>
+            <div class="l2">
+                Fill out the form to get weather info!
+            </div>
+        </div>
+    </div>
+    <div class="searchArea">
+        <!--cannot use submit() as onsubmit function-->
+        <form autocomplete="off" onsubmit="submitAction(); return false;">
+            <label id="streetLabel" class="label" for="street">Street</label>
+            <input id="street" name="street" type="text" required>
+
+            <label id="cityLabel" class="label" for="city">City</label>
+            <input id="city" name="city" type="text" required>
+
+            <label id="stateLabel" class="label" for="state">State</label>
+            <select id="state" name="state" required>
+                <option value="" disabled selected>Select your state</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+
+            <hr id="separateLine">
+
+            <div class="autoLocation">
+                Want us to auto-detect your location? Check here
+                <input id="autoLocation" name="autoLocation" type="checkbox" onclick="toggleInputAbility(checked)">
+            </div>
+            <input class="submit" type="submit" value="SUBMIT">
+        </form>
+        <button class="clear" onclick="clearContent()">CLEAR</button>
+    </div>
+</div>
+<div id="noRecordBox" >
+    <p>No records have been found.</p>
+</div>
+<div id="todayBox">
+    <p id="dailyLocation">Location</p>
+    <div class="iconAndTemp">
+        <div class="icon">
+            <img id="todayIcon" src="/static/images/weatherIcon/clear_day.svg">
+            <p id="weatherCode">Clear</p>
+        </div>
+        <p id="todayTemp">33.3°</p>
+    </div>
+    <div class="todayItems">
+        <div class="todayItem">
+            <p>Humidity</p>
+            <img src="/static/images/todayIcon/humidity.png">
+            <p id="humidityNumber">66%</p>
+        </div>
+        <div class="todayItem">
+            <p>Pressure</p>
+            <img src="/static/images/todayIcon/pressure.png">
+            <p id="pressureNumber">66%</p>
+        </div>
+        <div class="todayItem">
+            <p>Wind Speed</p>
+            <img src="/static/images/todayIcon/windSpeed.png">
+            <p id="windSpeedNumber">66%</p>
+        </div>
+        <div class="todayItem">
+            <p>Visibility</p>
+            <img src="/static/images/todayIcon/visibility.png">
+            <p id="visibilityNumber">66%</p>
+        </div>
+        <div class="todayItem">
+            <p>Cloud Cover</p>
+            <img src="/static/images/todayIcon/cloudCover.png">
+            <p id="cloudCoverNumber">66%</p>
+        </div>
+        <div class="todayItem">
+            <p>UV Level</p>
+            <img src="/static/images/todayIcon/uvLevel.png">
+            <p id="uvLevelNumber">66%</p>
+        </div>
+    </div>
+</div>
+<div id="dailyBox" >
+    <div class="headLine">
+        <div class="dailyDate">
+            Date
+        </div>
+        <div class="dailyStatus">
+            Status
+        </div>
+        <div class="dailyTempHigh">
+            Temp High
+        </div>
+        <div class="dailyTempLow">
+            Temp Low
+        </div>
+        <div class="dailyWindSpeed">
+            Wind Speed
+        </div>
+    </div>
+</div>
+<div id="detailBox" >
+    <div id="detailTitle">
+        Daily Weather Details
+    </div>
+    <div id="detail">
+        <div class="upperPart">
+            <div class="leftPart">
+                <div id="detailDate">
+                    Thursday
+                </div>
+                <div id="detailWeatherCode">
+                    Light Fog
+                </div>
+                <div id="detailTemp">
+                    90.88°F/90.88°F
+                </div>
+            </div>
+            <div id="detailIconDiv">
+                <img id="detailIcon" src="/static/images/weatherIcon/fog_light.svg">
+            </div>
+        </div>
+        <div class="bottomPart">
+            <div class="bottomLine">
+                <div class="weatherIndicator">
+                    Precipitation:&nbsp;
+                </div>
+                <div class="detailNumber" id="precipitation">
+                    N/A
+                </div>
+            </div>
+            <div class="bottomLine">
+                <div class="weatherIndicator">
+                    Chance of Rain:&nbsp;
+                </div>
+                <div class="detailNumber" id="rainChance">
+                    0%
+                </div>
+            </div>
+            <div class="bottomLine">
+                <div class="weatherIndicator">
+                    Wind Speed:&nbsp;
+                </div>
+                <div class="detailNumber" id="windSpeed">
+                    13.24 mph
+                </div>
+            </div>
+            <div class="bottomLine">
+                <div class="weatherIndicator">
+                    Humidity:&nbsp;
+                </div>
+                <div class="detailNumber" id="humidity">
+                    94.96%
+                </div>
+            </div>
+            <div class="bottomLine">
+                <div class="weatherIndicator">
+                    Visibility:&nbsp;
+                </div>
+                <div class="detailNumber" id="visibility">
+                    9.94 mi
+                </div>
+            </div>
+            <div class="bottomLine">
+                <div class="weatherIndicator">
+                    Sunrise/Sunset:&nbsp;
+                </div>
+                <div class="detailNumber" id="sun">
+                    6AM/7PM
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="chartTitleAndArrow">
+    <p>Weather Charts</p>
+    <img id="arrowDown" src="/static/images/arrowDown.png" onclick="clickArrowDown()">
+    <img id="arrowUp" src="/static/images/arrowUp.png" onclick="clickArrowUp()">
+</div>
+<div id="chart1Box" >
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+    </figure>
+</div>
+<div id="chart2Box" >
+    <figure class="highcharts-figure">
+        <div id="container2">
+        </div>
+    </figure>
+</div>
+</body>
+</html>
