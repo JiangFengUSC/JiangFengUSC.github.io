@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>江锋的互动媒体作业</title>
+    <style> body {padding: 0; margin: 0;} </style>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script> -->
+    <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script>
+
+    <!-- 碰撞检测 -->
+    <script src="../addons/p5.collide2d.js"></script>
+    <script src="../addons/p5.collide2d.min.js"></script>
+
+    <!-- 加载动画 -->
+    <script src="../addons/p5.play.js"></script>
+    
+    <script src="singleParticle.js"></script>
+    <script src="particles.js"></script>
+    <script src="sketch.js"></script>
+
+    <style type="text/css">
+      .footer {
+          height:70px;
+          /*max-width:580px;*/
+          position: fixed;
+          bottom: 30px;
+          left: 50%;
+          transform: translate(-50%);
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1 align="center">打群架</h1>
+    <div id="sketch-holder">
+      <!-- Our sketch will go here! -->
+    </div>
+    <div id="bottom">
+      
+    </div>
+    <div class="footer">
+      <h3 align="center">使用 w a s d 键控制方向，按下鼠标可将视野放大。</h3>
+      <h3 align="center">祝你玩的愉快</h3>
+    </div>
+  </body>
+</html>
