@@ -1,0 +1,142 @@
+body{
+  //background: linear-gradient(to bottom right, #76b8fa 0%, #fff476 100%) fixed;
+  background: linear-gradient(to bottom, #76b8fa 0%, #ffffff 150%) fixed;
+
+  #root{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    .topBar{
+      display: flex;
+      justify-content: space-between;
+      margin: 70px 50px;
+      //border-style: dashed;
+
+      .titleName{
+        font-family: 'Amatic SC', cursive;
+        font-size: 60px;
+      }
+
+      .menu{
+        font-family: 'Ubuntu', sans-serif;
+        display: flex;
+        font-size: 20px;
+        margin: 30px 0;
+
+        gap: 40px;
+
+      }
+    }
+    .content{
+      display: flex;
+      align-items: flex-start;
+      #avatar{
+        max-width: 500px;
+        width: 100%;
+        object-fit: contain;
+        margin: 50px;
+      }
+
+      .mainText{
+        margin: 50px;
+        #hello{
+          font-family: 'Ubuntu', sans-serif;
+          font-size: 34px;
+          font-weight: normal;
+          color: #222222;
+          margin: 0 0 20px 0;
+        }
+        #introduction{
+          font-family: 'Open Sans', sans-serif;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          color: #575757;
+          p {
+            line-height: 1.9;
+          }
+          a{
+            color: #575757;
+          }
+          a,
+          a:after,
+          a:before {
+            transition: all .5s;
+          }
+          a:hover{
+            color: black;
+          }
+        }
+
+      }
+
+    }
+    .contacts{
+      display: flex;
+      justify-content: flex-end;
+      margin: 70px;
+      gap: 20px;
+      a:hover{
+        color: black;
+      }
+      a:link{
+        color: gray;
+      }
+      a:visited{
+        color: gray;
+      }
+      a:active{
+        color: black;
+      }
+      .linkedIn{
+
+
+      }
+      .email{
+
+      }
+      .github{
+
+      }
+    }
+  }
+
+}
+
+@media (max-width: 800px) {
+  body{
+    #root{
+      margin: 0;
+      .topBar{
+        flex-direction: column;
+        justify-items: center;
+        //width: 100%;
+        max-width: 90%;
+        margin: auto;
+        //background-color: red;
+        //margin: 0;
+        .titleName{
+          //margin: 10px;
+        }
+        .menu{
+          justify-content: space-around;
+          .menuItem{
+            font-size: 3vw;
+          }
+
+        }
+      }
+      .content{
+        flex-direction: column;
+        #avatar{
+          max-width: 90%;
+          max-height: 100%;
+          margin: auto;
+        }
+
+      }
+    }
+
+  }
+}

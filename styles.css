@@ -1,0 +1,110 @@
+body {
+  background: linear-gradient(to bottom, #76b8fa 0%, #ffffff 150%) fixed;
+}
+body #root {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+}
+body #root .topBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 50px;
+}
+body #root .topBar .titleName {
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+}
+body #root .topBar .menu {
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  font-size: 20px;
+  margin: 30px 0;
+  gap: 40px;
+}
+body #root .content {
+  display: flex;
+  align-items: flex-start;
+}
+body #root .content #avatar {
+  max-width: 500px;
+  width: 100%;
+  object-fit: contain;
+  margin: 50px;
+}
+body #root .content .mainText {
+  margin: 50px;
+}
+body #root .content .mainText #hello {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 34px;
+  font-weight: normal;
+  color: #222222;
+  margin: 0 0 20px 0;
+}
+body #root .content .mainText #introduction {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #575757;
+}
+body #root .content .mainText #introduction p {
+  line-height: 1.9;
+}
+body #root .content .mainText #introduction a {
+  color: #575757;
+}
+body #root .content .mainText #introduction a,
+body #root .content .mainText #introduction a:after,
+body #root .content .mainText #introduction a:before {
+  transition: all 0.5s;
+}
+body #root .content .mainText #introduction a:hover {
+  color: black;
+}
+body #root .contacts {
+  display: flex;
+  justify-content: flex-end;
+  margin: 70px;
+  gap: 20px;
+}
+body #root .contacts a:hover {
+  color: black;
+}
+body #root .contacts a:link {
+  color: gray;
+}
+body #root .contacts a:visited {
+  color: gray;
+}
+body #root .contacts a:active {
+  color: black;
+}
+@media (max-width: 800px) {
+  body #root {
+    margin: 0;
+  }
+  body #root .topBar {
+    flex-direction: column;
+    justify-items: center;
+    max-width: 90%;
+    margin: auto;
+  }
+  body #root .topBar .menu {
+    justify-content: space-around;
+  }
+  body #root .topBar .menu .menuItem {
+    font-size: 3vw;
+  }
+  body #root .content {
+    flex-direction: column;
+  }
+  body #root .content #avatar {
+    max-width: 90%;
+    max-height: 100%;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
