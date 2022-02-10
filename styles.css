@@ -82,7 +82,7 @@ body #root .contacts a:visited {
 body #root .contacts a:active {
   color: black;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   body #root {
     margin: 0;
   }
