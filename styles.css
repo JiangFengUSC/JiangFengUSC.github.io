@@ -12,16 +12,26 @@ body #root .topBar {
   justify-content: space-between;
   margin: 70px 50px;
 }
+body #root .topBar a {
+  text-decoration: none;
+}
 body #root .topBar .titleName {
   font-family: 'Amatic SC', cursive;
   font-size: 60px;
 }
+body #root .topBar .titleName a {
+  color: black;
+}
 body #root .topBar .menu {
   font-family: 'Ubuntu', sans-serif;
   display: flex;
-  font-size: 20px;
-  margin: 30px 0;
   gap: 40px;
+  margin: 30px 0;
+  font-size: 20px;
+  color: gray;
+}
+body #root .topBar .menu #about {
+  color: black;
 }
 body #root .content {
   display: flex;
@@ -29,7 +39,7 @@ body #root .content {
 }
 body #root .content #avatar {
   max-width: 500px;
-  width: 100%;
+  width: 40%;
   object-fit: contain;
   margin: 50px;
 }
@@ -82,7 +92,16 @@ body #root .contacts a:visited {
 body #root .contacts a:active {
   color: black;
 }
-@media (max-width: 900px) {
+body #root .credit {
+  margin-left: 50px;
+  font-size: 10px;
+  color: gray;
+}
+body #root .credit a {
+  color: gray;
+  text-decoration: none;
+}
+@media (max-width: 700px) {
   body #root {
     margin: 0;
   }
@@ -93,7 +112,7 @@ body #root .contacts a:active {
     margin: auto;
   }
   body #root .topBar .menu {
-    justify-content: space-around;
+    justify-content: space-between;
   }
   body #root .topBar .menu .menuItem {
     font-size: 3vw;
@@ -102,6 +121,7 @@ body #root .contacts a:active {
     flex-direction: column;
   }
   body #root .content #avatar {
+    width: 90%;
     max-width: 90%;
     max-height: 100%;
     margin: auto;
