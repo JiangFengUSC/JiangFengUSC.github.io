@@ -1,0 +1,237 @@
+body{
+  //background: linear-gradient(to bottom right, #76b8fa 0%, #fff476 100%) fixed;
+  background: linear-gradient(to bottom, #76b8fa 0%, #ffffff 150%) fixed;
+
+  #root{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    .topBar{
+      display: flex;
+      justify-content: space-between;
+      margin: 70px 50px;
+      a{
+        text-decoration: none;
+      }
+      .titleName{
+        font-family: 'Amatic SC', cursive;
+        font-size: 60px;
+        a{
+          color: black;
+        }
+      }
+
+      .menu{
+        font-family: 'Ubuntu', sans-serif;
+        display: flex;
+        gap: 40px;
+        margin: 30px 0;
+
+        font-size: 20px;
+
+        a{
+          color: gray;
+        }
+        a:hover{
+          color: black;
+        }
+        #projects{
+          color: black;
+          a{
+            color: black;
+          }
+        }
+      }
+    }
+    .content{
+      margin: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .bigCard{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border-radius: 10px;
+        background-color: white;
+
+        display: flex;
+        justify-content: space-around;
+
+        .description{
+          margin: 50px;
+          color: black;
+          //width:90%;
+          //background-color: yellow;
+          .title{
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 30px;
+
+          }
+          .textAndCode{
+            .text{
+              font-family: 'Open Sans', sans-serif;
+              font-size: 20px;
+            }
+
+            .QRcode{
+              margin: 30px 0;
+              img{
+                object-fit: cover;
+                width: 118px;
+                //height: 110px;
+              }
+              p{
+                //width: 118px;
+                font-family: 'Ubuntu', sans-serif;
+                font-weight: bold;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+
+        .images{
+          margin: 50px;
+          color: black;
+          width: 500px;
+          //background-color: red;
+
+          display: flex;
+
+          img{
+            object-fit: cover;
+          }
+          .screenshot1{
+            transform: translateX(-50px);
+            width: 300px;
+            height: auto;
+            z-index: 1;
+          }
+          .screenshot2{
+            width: 300px;
+            z-index: 0;
+            transform: translateX(-90px)
+          }
+          .screenshot3{
+            width: 300px;
+            height: auto;
+            z-index: 1;
+          }
+          .screenshot4{
+            width: 300px;
+            z-index: 0;
+            transform: translateX(-40px)
+          }
+        }
+      }
+      .cardGrid{
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 50px;
+        row-gap: 80px;
+
+      }
+    }
+    .contacts{
+      display: flex;
+      justify-content: flex-end;
+      margin: 70px;
+      gap: 20px;
+      a:hover{
+        color: black;
+      }
+      a:link{
+        color: gray;
+      }
+      a:visited{
+        color: gray;
+      }
+      a:active{
+        color: black;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 700px) {
+  body{
+    #root{
+      margin: 0;
+      .topBar{
+        flex-direction: column;
+        justify-items: center;
+        //width: 100%;
+        max-width: 90%;
+        margin: auto;
+        //background-color: red;
+        //margin: 0;
+        .titleName{
+          //margin: 10px;
+        }
+        .menu{
+          justify-content: space-between;
+          .menuItem{
+            font-size: 3vw;
+          }
+
+        }
+      }
+
+    }
+
+  }
+}
+
+@media (max-width: 1100px) {
+  body{
+    #root{
+      .content{
+        .bigCard{
+          flex-direction: column;
+          .description{
+
+          }
+          .images{
+            margin-right: auto;
+            margin-left: auto;
+            width: 70%;
+            img{
+
+            }
+            .screenshot1{
+              transform: translateX(0);
+              width: 55%;
+              height: auto;
+              z-index: 1;
+            }
+            .screenshot2{
+              width: 55%;
+              z-index: 0;
+              transform: translateX(-10%)
+            }
+            .screenshot3{
+              //transform: translateX(-50px);
+              width: 55%;
+              height: auto;
+              z-index: 1;
+            }
+            .screenshot4{
+              width: 55%;
+              z-index: 0;
+              transform: translateX(-10%)
+            }
+          }
+        }
+      }
+    }
+
+  }
+  
+}
