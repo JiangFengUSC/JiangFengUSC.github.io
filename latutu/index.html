@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Latutu Ltd — Software & Digital Products</title>
+  <meta name="description" content="Latutu Ltd builds practical consumer apps and web products. Pre-revenue studio focused on clean UX and lightweight tools." />
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#11131a;
+      --text:#e9ecf1;
+      --muted:#b6bdc8;
+      --line:rgba(255,255,255,.10);
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(110,231,255,.10), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(167,139,250,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; position:sticky; top:0; padding:14px 18px;
+      backdrop-filter: blur(10px);
+      background: rgba(11,12,16,.55);
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:650; letter-spacing:.2px}
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      box-shadow: 0 10px 30px rgba(110,231,255,.12);
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    nav a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+    .hero{padding:48px 0 18px;}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      color:var(--muted); border:1px solid var(--line);
+      padding:8px 12px; border-radius:999px;
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+    }
+    h1{
+      margin:16px 0 10px;
+      font-size: clamp(30px, 4.3vw, 54px);
+      line-height:1.05;
+      letter-spacing:-.8px;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: clamp(15px, 1.6vw, 18px);
+      max-width: 62ch;
+      margin: 0 0 22px;
+    }
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      box-shadow: var(--shadow);
+      font-weight:600;
+    }
+    .btn.primary{
+      border-color: rgba(110,231,255,.45);
+      background: linear-gradient(135deg, rgba(110,231,255,.16), rgba(167,139,250,.14));
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      margin-top:24px;
+    }
+    .card{
+      background: rgba(17,19,26,.72);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .meta{color:var(--muted); font-size:14px; margin:0}
+    .section{margin-top:26px}
+    .section h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .list{display:grid; gap:12px}
+    .proj{
+      display:flex; justify-content:space-between; gap:14px; align-items:flex-start;
+      padding:16px; border-radius:16px; border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .proj strong{display:block; margin-bottom:6px}
+    .proj p{margin:0; color:var(--muted); font-size:14px}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px;
+      white-space:nowrap;
+      background: rgba(255,255,255,.02);
+    }
+    footer{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .small{color:var(--muted); font-size:13px}
+    @media (max-width: 860px){
+      .grid{grid-template-columns: 1fr}
+      header{position:relative}
+    }
+
+
+    /* ===== Projects ===== */
+
+    .projects{
+      display:grid;
+      gap:20px;
+    }
+
+    .project{
+      display:flex;
+      gap:20px;
+      padding:18px;
+      border-radius:18px;
+      background:rgba(17,19,26,.7);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .project img{
+      width:500px;
+      height:500px;
+      object-fit:contain;
+      border-radius:14px;
+      background: transparent;
+      flex-shrink:0;
+    }
+
+    .project h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+
+    .project p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+
+    .project a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div>
+        <div>Latutu Ltd</div>
+        <div class="small">Software & Digital Products</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">Pre-revenue studio • Online delivery • App & Web</div>
+      <h1>Build lightweight products that people actually use.</h1>
+      <p class="sub">
+        Latutu Ltd designs and develops consumer apps and web products with a focus on clean UX, practical workflows,
+        and fast iteration. We ship digitally via the App Store and the web.
+      </p>
+
+      <div class="grid" id="what">
+        <div class="card">
+          <h3>What we do</h3>
+          <p class="meta">
+            We develop and operate software products for end users — primarily utility apps and community / platform experiences.
+            Monetization may include subscriptions, in-app purchases, and paid digital services.
+          </p>
+        </div>
+        <div class="card">
+          <h3>How we deliver</h3>
+          <p class="meta">
+            100% online. Product delivery via App Store and websites. Customer support and updates provided digitally.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <h2>Selected Projects</h2>
+
+    <div class="projects">
+
+      <div class="project">
+        <img src="images/split2.PNG" alt="Split Bills Easily preview">
+        <div>
+          <h3>Split Bills Easily</h3>
+          <p>
+            An iOS utility app that helps users split group expenses,
+            calculate balances, and share results easily.
+          </p>
+          <a href="https://apps.apple.com/us/app/split-bills-easily/id1608808846" target="_blank">
+            View on App Store →
+          </a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/bobo.png" alt="Bobo preview">
+        <div>
+          <h3>Bobo Neck Buddy</h3>
+          <p>
+            An Mac OS utility app that helps users get rid of slouch via alarm and motion sensor in Airpods.
+          </p>
+          <a href="https://apps.apple.com/us/app/bobo-neck-buddy/id6752841613" target="_blank">
+            View on App Store →
+          </a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/go1.png" alt="Go Connect preview">
+        <div>
+          <h3>Go Connect</h3>
+          <p>
+            A community and entertainment platform project designed for
+            international students in University of Chicago.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="meta" style="margin:0 0 10px;">
+          For partnership, product inquiries, or verification requests, contact:
+        </p>
+        <p style="margin:0; font-weight:650;">
+          helloboboapp@gmail.com
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Latutu Ltd. All rights reserved.</div>
+      <div class="small">Company verification / KYB: app & web software products, online delivery.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
