@@ -1,108 +1,290 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<!-- Required meta tags for bootstrap -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--bootstrap-->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-		<!--bootstrap icon-->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Latutu Ltd — Software & Digital Products</title>
+  <meta name="description" content="Latutu Ltd builds practical consumer apps and web products. Pre-revenue studio focused on clean UX and lightweight tools." />
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#11131a;
+      --text:#e9ecf1;
+      --muted:#b6bdc8;
+      --line:rgba(255,255,255,.10);
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(110,231,255,.10), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(167,139,250,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; position:sticky; top:0; padding:14px 18px;
+      backdrop-filter: blur(10px);
+      background: rgba(11,12,16,.55);
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:650; letter-spacing:.2px}
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      box-shadow: 0 10px 30px rgba(110,231,255,.12);
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    nav a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+    .hero{padding:48px 0 18px;}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      color:var(--muted); border:1px solid var(--line);
+      padding:8px 12px; border-radius:999px;
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+    }
+    h1{
+      margin:16px 0 10px;
+      font-size: clamp(30px, 4.3vw, 54px);
+      line-height:1.05;
+      letter-spacing:-.8px;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: clamp(15px, 1.6vw, 18px);
+      max-width: 62ch;
+      margin: 0 0 22px;
+    }
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      box-shadow: var(--shadow);
+      font-weight:600;
+    }
+    .btn.primary{
+      border-color: rgba(110,231,255,.45);
+      background: linear-gradient(135deg, rgba(110,231,255,.16), rgba(167,139,250,.14));
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      margin-top:24px;
+    }
+    .card{
+      background: rgba(17,19,26,.72);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .meta{color:var(--muted); font-size:14px; margin:0}
+    .section{margin-top:26px}
+    .section h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .list{display:grid; gap:12px}
+    .proj{
+      display:flex; justify-content:space-between; gap:14px; align-items:flex-start;
+      padding:16px; border-radius:16px; border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .proj strong{display:block; margin-bottom:6px}
+    .proj p{margin:0; color:var(--muted); font-size:14px}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px;
+      white-space:nowrap;
+      background: rgba(255,255,255,.02);
+    }
+    footer{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .small{color:var(--muted); font-size:13px}
+    @media (max-width: 860px){
+      .grid{grid-template-columns: 1fr}
+      header{position:relative}
+    }
 
-		<!--chrome icon-->
-		<link rel="icon" type="image/png" href="resource/logo/logo.png"/>
-		<!--safari icon-->
-		<link rel="apple-touch-icon" href="resource/logo/apple-touch-icon-iphone-60x60.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="resource/logo/apple-touch-icon-ipad-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="resource/logo/apple-touch-icon-iphone-retina-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="resource/logo/apple-touch-icon-ipad-retina-152x152.png">
-		<!--safari tab bar color-->
-		<meta name="theme-color" content="#76b8fa">
 
-		<!--font-->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    /* ===== Projects ===== */
 
-		<link rel="stylesheet" href="styles.css">
-<!--		<script src="script.js"></script>-->
+    .projects{
+      display:grid;
+      gap:20px;
+    }
 
-		<title>Feng Jiang</title>
-	</head>
-	<body>
-	<div id="root">
-		<div class="topBar">
-			<div class="titleName">
-				<a href="index.html">
-					Feng Jiang
-				</a>
-			</div>
-			<div class="menu">
-				<div class="menuItem">
-					<a href="https://jiangfengusc.github.io/projects">
-						PROJECTS
-					</a>
-				</div>
-				<div class="menuItem">
-					<a href="https://jiangfengusc.github.io/experience">
-						EXPERIENCE
-					</a>
-				</div>
-				<div class="menuItem" id="about">
-					<a href="https://jiangfengusc.github.io/">
-						ABOUT
-					</a>
-				</div>
-			</div>
-		</div>
+    .project{
+      display:flex;
+      gap:20px;
+      padding:18px;
+      border-radius:18px;
+      background:rgba(17,19,26,.7);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
 
-		<div class="content">
-			<img src="resource/avatar.jpeg" id="avatar" alt="avatar">
+    .project img{
+      width:500px;
+      height:500px;
+      object-fit:contain;
+      border-radius:14px;
+      background: transparent;
+      flex-shrink:0;
+    }
 
-			<div class="mainText">
-				<div id="hello">
-					HELLO!
-				</div>
-				<div id="introduction">
-					<p id="p1">
-						I am an iOS Engineer in Pinterest📌, graduated from USC in Computer Science.
-					</p>
-					<p id="p2">
-						I am also an independent <b>software developer</b>.
-						I like to develop some tiny tools that are convenient, user-friendly, and elegant.
-						<a href="https://jiangfengusc.github.io/projects">Here</a> are some of my projects.
-					</p>
-					<p id="p4">
-						Outside of programming, I enjoy hiking, swimming, and Genshin Impact. Ad Astra Abyssosque!
-					</p>
-				</div>
-			</div>
-		</div>
+    .project h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
 
-		<div class="contacts">
-			<div class="linkedIn">
-				<a href="https://www.linkedin.com/in/jiangfengusc" target="_blank">
-					<i class="bi bi-linkedin"></i>
-				</a>
-			</div>
-			<div class="email">
-				<a href="mailto:jiangfeng.rocket@gmail.com" target="_blank">
-					<i class="bi bi-envelope"></i>
-				</a>
-			</div>
-			<div class="github">
-				<a href="https://github.com/JiangFengUSC" target="_blank">
-					<i class="bi bi-github"></i>
-				</a>
-			</div>
-		</div>
-		<div class="credit">
-			Design Credit To: <a href="https://www.jingtaoh.com">JiangTao Huang</a>
-		</div>
+    .project p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
 
-	</div>
-	</body>
+    .project a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div>
+        <div>Latutu Ltd</div>
+        <div class="small">Software & Digital Products</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">Pre-revenue studio • Online delivery • App & Web</div>
+      <h1>Build lightweight products that people actually use.</h1>
+      <p class="sub">
+        Latutu Ltd designs and develops consumer apps and web products with a focus on clean UX, practical workflows,
+        and fast iteration. We ship digitally via the App Store and the web.
+      </p>
+
+      <div class="grid" id="what">
+        <div class="card">
+          <h3>What we do</h3>
+          <p class="meta">
+            We develop and operate software products for end users — primarily utility apps and community / platform experiences.
+            Monetization may include subscriptions, in-app purchases, and paid digital services.
+          </p>
+        </div>
+        <div class="card">
+          <h3>How we deliver</h3>
+          <p class="meta">
+            100% online. Product delivery via App Store and websites. Customer support and updates provided digitally.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <h2>Selected Projects</h2>
+
+    <div class="projects">
+
+      <div class="project">
+        <img src="latutu/images/split2.PNG" alt="Split Bills Easily preview">
+        <div>
+          <h3>Split Bills Easily</h3>
+          <p>
+            An iOS utility app that helps users split group expenses,
+            calculate balances, and share results easily.
+          </p>
+          <a href="https://apps.apple.com/us/app/split-bills-easily/id1608808846" target="_blank">
+            View on App Store →
+          </a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="latutu/images/bobo.png" alt="Bobo preview">
+        <div>
+          <h3>Bobo Neck Buddy</h3>
+          <p>
+            An Mac OS utility app that helps users get rid of slouch via alarm and motion sensor in Airpods.
+          </p>
+          <a href="https://apps.apple.com/us/app/bobo-neck-buddy/id6752841613" target="_blank">
+            View on App Store →
+          </a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="latutu/images/go1.PNG" alt="Go Connect preview">
+        <div>
+          <h3>Go Connect</h3>
+          <p>
+            A community and entertainment platform project designed for
+            international students in University of Chicago.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="meta" style="margin:0 0 10px;">
+          For partnership, product inquiries, or verification requests, contact:
+        </p>
+        <p style="margin:0; font-weight:650;">
+          helloboboapp@gmail.com
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Latutu Ltd. All rights reserved.</div>
+      <div class="small">Company verification / KYB: app & web software products, online delivery.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
